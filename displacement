@@ -1,0 +1,28 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep  1 15:21:19 2015
+
+@author: admin
+"""
+
+import math
+import numpy as np
+from sympy import summation, oo, symbols
+
+n = symbols ('n', integer=True)
+
+def displacement(t):
+    
+    A = 100
+    x = 1    
+ 
+#    P = summation(math.cos(n*(1/n)-1/(n-1) ),(n,2,oo)) 
+#    u = A/x * 2 * math.pi * ( 1/(2*math.pi) + (1/math.pi)* P )
+    
+    u = A/x * 2 * math.pi * ( 1/(2*math.pi) + (1/math.pi)* summation(math.cos(n*((1/t)-1/(t-1) ) ),(n,2,oo)) ) 
+    
+    return u
+
+
+    
+    
